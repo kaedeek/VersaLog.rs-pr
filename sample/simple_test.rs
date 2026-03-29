@@ -126,7 +126,7 @@ fn main() {
     logger.Critical("critical", &[]);
 }
 
-// catch_exception false
+// catch_exceptions false
 fn main() {
     let logger = NewVersaLog(
         "simple",
@@ -147,7 +147,7 @@ fn main() {
     logger.Critical("critical", &[]);
 }
 
-// catch_exception true
+// catch_exceptions true
 fn main() {
     let logger = NewVersaLog(
         "simple",
