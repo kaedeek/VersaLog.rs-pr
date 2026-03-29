@@ -38,6 +38,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         false,
         false,
         vec![],
+        false,
     );
 
     let api = "http://api.openweathermap.org/data/2.5/weather";

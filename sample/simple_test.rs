@@ -11,6 +11,7 @@ fn main() {
         false,
         false,
         vec![],
+        false,
     );
 
     logger.Info("info", &[]);
@@ -31,6 +32,7 @@ fn main() {
         false,
         false,
         vec![],
+        false,
     );
 
     logger.Info("info", &[]);
@@ -51,6 +53,7 @@ fn main() {
         false,
         false,
         vec![],
+        false,
     );
 
     logger.Info("info", &[]);
@@ -71,6 +74,7 @@ fn main() {
         false,
         false,
         vec![],
+        false,
     );
 
     logger.Info("info", &[]);
@@ -91,6 +95,7 @@ fn main() {
         false,
         false,
         vec![],
+        false,
     );
 
     logger.Info("info", &[]);
@@ -111,6 +116,7 @@ fn main() {
         true,
         false,
         vec![],
+        false,
     );
 
     logger.Info("info", &[]);
@@ -120,7 +126,7 @@ fn main() {
     logger.Critical("critical", &[]);
 }
 
-// silent false
+// catch_exception false
 fn main() {
     let logger = NewVersaLog(
         "simple",
@@ -133,6 +139,49 @@ fn main() {
         vec![],
         false,
     );
+
+    logger.Info("info", &[]);
+    logger.Error("error", &[]);
+    logger.Warning("warning.", &[]);
+    logger.Debug("debug", &[]);
+    logger.Critical("critical", &[]);
+}
+
+// catch_exception true
+fn main() {
+    let logger = NewVersaLog(
+        "simple",
+        false,
+        false,
+        "VersaLog",
+        false,
+        false,
+        false,
+        vec![],
+        true,
+    );
+
+    logger.Info("info", &[]);
+    logger.Error("error", &[]);
+    logger.Warning("warning.", &[]);
+    logger.Debug("debug", &[]);
+    logger.Critical("critical", &[]);
+}
+
+// silent false
+fn main() {
+    let mut logger = NewVersaLog(
+        "simple",
+        false,
+        false,
+        "VersaLog",
+        false,
+        false,
+        false,
+        vec![],
+        false,
+    );
+    logger.set_silent(false);
 
     logger.Info("info", &[]);
     logger.Error("info", &[]);
@@ -152,8 +201,9 @@ fn main() {
         false,
         true,
         vec![],
-        true,
+        false,
     );
+    logger.set_silent(true);
 
     logger.Info("info", &[]);
     logger.Error("info", &[]);
@@ -173,6 +223,7 @@ fn main() {
         false,
         false,
         vec![],
+        false,
     );
 
     logger.Info("info", &[]);
