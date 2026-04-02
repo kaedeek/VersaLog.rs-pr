@@ -11,6 +11,7 @@ fn main() {
         false,
         false,
         vec![],
+        false,
     );
 
     logger.Info("info", &[]);
@@ -31,6 +32,7 @@ fn main() {
         false,
         false,
         vec![],
+        false,
     );
 
     logger.Info("info", &[]);
@@ -51,6 +53,7 @@ fn main() {
         false,
         false,
         vec![],
+        false,
     );
 
     logger.Info("info", &[]);
@@ -71,6 +74,7 @@ fn main() {
         false,
         false,
         vec![],
+        false,
     );
 
     logger.Info("info", &[]);
@@ -91,6 +95,7 @@ fn main() {
         false,
         false,
         vec![],
+        false,
     );
 
     logger.Info("info", &[]);
@@ -111,6 +116,49 @@ fn main() {
         true,
         false,
         vec![],
+        false,
+    );
+
+    logger.Info("info", &[]);
+    logger.Error("error", &[]);
+    logger.Warning("warning.", &[]);
+    logger.Debug("debug", &[]);
+    logger.Critical("critical", &[]);
+}
+
+// catch_exception false
+fn main() {
+    let logger = NewVersaLog(
+        "simple2",
+        false,
+        false,
+        "VersaLog",
+        false,
+        false,
+        false,
+        vec![],
+        false,
+    );
+
+    logger.Info("info", &[]);
+    logger.Error("error", &[]);
+    logger.Warning("warning.", &[]);
+    logger.Debug("debug", &[]);
+    logger.Critical("critical", &[]);
+}
+
+// catch_exception true
+fn main() {
+    let logger = NewVersaLog(
+        "simple2",
+        false,
+        false,
+        "VersaLog",
+        false,
+        false,
+        false,
+        vec![],
+        false,
     );
 
     logger.Info("info", &[]);
@@ -122,7 +170,7 @@ fn main() {
 
 // silent false
 fn main() {
-    let logger = NewVersaLog(
+    let mut logger = NewVersaLog(
         "simple2",
         false,
         false,
@@ -133,6 +181,7 @@ fn main() {
         vec![],
         false,
     );
+    logger.set_silent(false);
 
     logger.Info("info", &[]);
     logger.Error("info", &[]);
@@ -143,7 +192,7 @@ fn main() {
 
 // silent true
 fn main() {
-    let logger = NewVersaLog(
+    let mut logger = NewVersaLog(
         "simple2",
         false,
         false,
@@ -152,8 +201,9 @@ fn main() {
         false,
         true,
         vec![],
-        true,
+        false,
     );
+    logger.set_silent(true);
 
     logger.Info("info", &[]);
     logger.Error("info", &[]);
@@ -173,6 +223,7 @@ fn main() {
         false,
         false,
         vec![],
+        false,
     );
 
     logger.Info("info", &[]);

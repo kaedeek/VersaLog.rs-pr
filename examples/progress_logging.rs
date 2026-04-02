@@ -1,4 +1,4 @@
-use versalogrs::NewVersaLog;
+use versalogrs::{VersaLog, NewVersaLog};
 
 fn process_file(log: &VersaLog, index: usize, total: usize) {
     log.Step(
@@ -28,11 +28,16 @@ fn process_file(log: &VersaLog, index: usize, total: usize) {
 }
 
 fn main() {
-    let log = VersaLog::new(
+    let log = NewVersaLog(
         "detailed",
         true,
         true,
         "BATCH",
+        false,
+        false,
+        false,
+        vec![],
+        false,
     );
 
     log.Info("Batch Start", &[]);

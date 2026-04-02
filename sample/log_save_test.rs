@@ -10,6 +10,7 @@ fn main() {
         false,
         true,
         vec![],
+        false,
     );
 
     logger.Info("info", &[]);
